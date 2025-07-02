@@ -1,0 +1,30 @@
+# .github/workflows/deploy-resume.yml
+name: Build and Deploy Resume
+
+on:
+  push:
+    paths:
+      - 'cv.typ'
+      - '.github/workflows/deploy-resume.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Typst CLI
+        uses: typst-community/setup-typst@v3
+
+      - name: Compile resume
+        run: typst compile cv.typ resume.pdf
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          keep_files: true
+          force_orphan: true
