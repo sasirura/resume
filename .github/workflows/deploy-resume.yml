@@ -20,18 +20,28 @@ jobs:
       - name: Install Typst CLI
         uses: typst-community/setup-typst@v3
 
+      - name: Install Source Sans 3 fonts
+        run: |
+          mkdir -p ~/.local/share/fonts/source-sans-3
+
+          for font in Regular Italic Bold BoldItalic ExtraLight ExtraLightItalic Light LightItalic Medium MediumItalic SemiBold SemiBoldItalic; do
+            wget -O ~/.local/share/fonts/source-sans-3/SourceSans3-$font.ttf \
+              https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3-$font.ttf
+          done
+
+          fc-cache -fv
+
       - name: Install required fonts
         run: |
           sudo apt update
           sudo apt install -y fonts-roboto fonts-font-awesome unzip wget
 
-          # Download Source Sans 3 from Google Fonts
-          wget https://fonts.google.com/download?family=Source%20Sans%203 -O source-sans-3.zip
-          unzip source-sans-3.zip -d source-sans-3
-
-          # Move fonts to local font directory
-          mkdir -p ~/.local/share/fonts
-          cp source-sans-3/*.ttf ~/.local/share/fonts/
+          mkdir -p ~/.local/share/fonts/source-sans-3
+          for font in Regular Italic Bold BoldItalic ExtraLight ExtraLightItalic Light LightItalic Medium MediumItalic SemiBold SemiBoldItalic; do
+          wget -q -O ~/.local/share/fonts/source-sans-3/SourceSans3-$font.ttf \
+          https://github.com/google/fonts/raw/main/ofl/sourcesans3/SourceSans3-$font.ttf
+          done
+          
           fc-cache -fv
 
       - name: Compile resume
