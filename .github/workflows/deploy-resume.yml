@@ -2,12 +2,12 @@ name: Build and Deploy Resume
 
 on:
   push:
-   branches:
+    branches:
       - main
     paths:
       - 'cv.typ'
       - '.github/workflows/deploy-resume.yml'
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
   build-and-deploy:
