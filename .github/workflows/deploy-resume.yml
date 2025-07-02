@@ -23,13 +23,13 @@ jobs:
       - name: Install required fonts
         run: |
           sudo apt update
-          sudo apt install -y fonts-roboto fonts-font-awesome
-          
-          # Download and install Source Sans Pro manually
-          wget https://github.com/adobe-fonts/source-sans-pro/releases/download/3.052R/source-sans-pro-3.052R.zip
-          unzip source-sans-pro-3.052R.zip
+          sudo apt install -y fonts-roboto fonts-font-awesome unzip wget
+
+          # Install Source Sans 3 (OTF)
+          wget https://github.com/adobe-fonts/source-sans/releases/download/3.046R/source-sans-3-OTF.zip
+          unzip source-sans-3-OTF.zip
           mkdir -p ~/.local/share/fonts
-          cp -r source-sans-pro-3.052R/OTF/*.otf ~/.local/share/fonts/
+          cp -r source-sans-3-OTF/*.otf ~/.local/share/fonts/
           fc-cache -fv
 
       - name: Compile resume
