@@ -25,11 +25,13 @@ jobs:
           sudo apt update
           sudo apt install -y fonts-roboto fonts-font-awesome unzip wget
 
-          # Install Source Sans 3 (OTF)
-          wget https://github.com/adobe-fonts/source-sans/releases/download/3.046R/source-sans-3-OTF.zip
-          unzip source-sans-3-OTF.zip
+          # Download Source Sans 3 from Google Fonts
+          wget https://fonts.google.com/download?family=Source%20Sans%203 -O source-sans-3.zip
+          unzip source-sans-3.zip -d source-sans-3
+
+          # Move fonts to local font directory
           mkdir -p ~/.local/share/fonts
-          cp -r source-sans-3-OTF/*.otf ~/.local/share/fonts/
+          cp source-sans-3/*.ttf ~/.local/share/fonts/
           fc-cache -fv
 
       - name: Compile resume
