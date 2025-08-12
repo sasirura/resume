@@ -11,11 +11,11 @@
   title: [Intermediate Software Engineer],
   society: [Ivedha Inc.],
   logo: image("../src/logos/ivedha.png"),
-  date: [Sep 2023 – Present],
+  date: [Aug 2024 – Present],
   location: [Colombo, LK],
   description: list(
     [Engineered and owned a microservice in Go that automated Google Cloud resource provisioning for our internal platform, enabling faster and more consistent deployments across environments..],
-    [Led the migration of backend data from Firebase to PostgreSQL, improving data consistency, scalability, and long-term maintainability],
+    [Led the migration of backend code from Firebase to PostgreSQL.],
     [Developed custom plugins for Backstage to improve developer experience and automate internal workflows.],
     [Queried and processed GCP billing data using BigQuery to generate reports on cloud spend, helping the team identify cost-saving opportunities.],
   ),
@@ -25,7 +25,7 @@
   title: [Software Engineer],
   society: [EIS],
   logo: image("../src/logos/eis.png"),
-  date: [Sep 2023 – Present],
+  date: [Jan 2024 – Aug 2024],
   location: [Colombo, LK],
   description: list(
     [Developed invoicing app using Next.js 14, Tailwind, and TypeScript],
@@ -38,7 +38,7 @@
   title: [Junior Software Engineer],
   society: [MJ Legal],
   logo: image("../src/logos/mjlegal.jpg"),
-  date: [Jan 2022 – Apr 2023],
+  date: [Feb 2022 – Apr 2023],
   location: [Remote],
   description: list(
     [Built internal web applications with React.js and Node.js using TypeScript and MySQL to reduce manual documentation],
